@@ -219,7 +219,8 @@ describe("accountExporter", () => {
         ",false,,," +
         '"Foo ""Bar"" Baz"' +
         Array(22).join(",") + // A lot of empty fields.
-        singleUser.disabled;
+        singleUser.disabled +
+        Array(25).join(","); // more empty fields after extra idp support
       expect(spyWrite.getCall(0).args[0]).to.eq(expectedEntry + ",," + os.EOL);
       expect(nock.isDone()).to.be.true;
     });
